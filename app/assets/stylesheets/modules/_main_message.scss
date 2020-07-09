@@ -1,0 +1,75 @@
+.Main {
+  background-color: white;
+  width: calc(100vw - 15em);
+  height: 100vh;
+  padding: 2em;
+  margin-top: 3.5em;
+  overflow: scroll;
+  
+
+  .Message {
+    &__box {
+      background-color: white;
+      width: 39em;
+      height: 18em;
+      padding: 1em;
+      display: inline-block;
+      border: solid 0.05em gray;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__boxleft {
+    
+    }
+    &__image {
+  
+    }
+    &__userbox {
+      display: flex;
+  
+
+    }
+    &__user {
+      margin-left: 0.5em;
+    }
+    &__username {
+
+    }
+    &__nice {
+      margin-left: 2.5em;
+
+    } 
+    &__boxright {
+      padding-right: 2em;
+    }
+    &__contents {
+
+    } 
+    &__contentsname {
+      font-size: 2.5em;
+    } 
+    &__contentsarea {
+      padding: 0.5em 0;
+    }
+    &__contentscoment {
+      border-top: solid 0.05em gray;
+      padding: 0.5em 0;
+
+    }
+    &__contentsspoint {
+      border-top: solid 0.05em gray;
+      padding: 0.5em 0;
+    }
+    }
+}
+// .message__box
+//     .message__image
+//       = image_tag '/assets/test1.png', height: '200px', width: '200px', class: 'hoge'
+//     .message__userbox
+//       .message__username
+//       .message__nice
+//     .message__contents
+//       .message__contentsarea
+//       .message__contentsname
+//       .message__contentscoment
+//       .message__contentspoint

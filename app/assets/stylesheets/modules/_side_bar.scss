@@ -1,0 +1,50 @@
+.Sidebar {
+  // background-color: grey;
+  width: 15em;
+  height: 100vh;
+}
+  .Sidebarmain {
+    padding: 1em;
+    line-height: 2em;
+  
+    // &__searchbox {
+    //   background-color: white;
+    //   width: 13em;
+    //   height:2em;
+    //   margin-top: 2em;
+    //   padding: 0.2em;
+    //   margin-bottom: 1em;
+    //   border: solid 0.05em gray;
+
+    // }
+
+    &__areabox {
+      // background-color: white;
+      margin-top: 3.5em;
+    }
+
+    &__drop {
+      // background-color: white;
+      height: 2em;
+      border: solid 0.05em gray;
+  
+    }
+
+    &__list {
+      border: solid 0.05em gray;
+      background-color: white;
+      width: 13em;
+      height: 6em;
+      margin-top: 1em;
+    }
+
+    &__ldentify {
+      margin-top: 3em;
+    }
+    &__ldentifylist {
+      border: solid 0.05em gray;
+      background-color: white;
+      width: 13em;
+      height: 6em;
+    }
+  }
