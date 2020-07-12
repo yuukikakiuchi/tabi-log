@@ -1,5 +1,8 @@
 .Header
   .Headermenu
+    %ul.Headermenu__left
+      %li.Headermenu__top
+        ←旅ログ
     %ul.Headermenu__right
       %li.Headermenu__new
         新規登録
@@ -12,13 +15,20 @@
       %li.Headermenu__mypage
         マイページ
   .Headermain
+    -# .Headermain__images
     .Headermain__pagename
-      = image_tag '/assets/logo1.PNG', height: '220em', width: '220em', class: 'hoge'
-
+      = image_tag '/assets/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+    .Headermain__right
+      .Headermain__righttext
+        %p ひとりが好き？
+        %span 私はひとりも好き
+      .Headermain__rightimages
+        .Headermain__rightimage
+          = image_tag '/assets/logo2.jpg', height: '100em', width: '100em', class: 'hoge'
   .Headerlist
     .Headerlist__group 
       .Headerlist__search
         キーワード検索
       .Headerlist__right
         .Headerlist__post
-          投稿する
+          = link_to "投稿する", posts_path, class: 'Button'

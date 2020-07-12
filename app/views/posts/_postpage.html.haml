@@ -1,14 +1,37 @@
 .Posts
-  .Mainpost
+  = form_with model: @post, html: {class: 'Mainpost'}, local: true do |f|
     .Mainpost__box
-      .Mainpost__image
-        = image_tag '/assets/test2.jpg', height: '240em', width: '240em', class: 'hoge'
+
+      -# - @post.each do |content|
+      -# = image_tag @post.image.url, class: 'Message__imagea' if @post.image.present?
+      = f.file_field :image, class: 'Mainpost__image'
       .Mainpost__right
-        .Mainpost__inputname
-          名前を入力
+        = f.text_field :areaname, class: 'Mainpost__inputname', placeholder: 'スポット名を入力'
         .Mainpost__inputarea
-          場所を入力
+        = f.text_field :large_area, class: 'Mainpost__inputarea', placeholder: '広場所を入力'
         .Mainpost__inputcoment
-          コメントを入力
+        = f.text_field :content, class: 'Mainpost__comment', placeholder: 'コメントを入力'
         .Mainpost__inputspoint
-          ポイントを選択
+          = f.text_field :check_1, class: 'Mainpost__inputspointe', placeholder: 'こだわりを入力'
+    .Footer
+      = f.submit '投稿する', class: 'Footer__menu'
+
+-# .Posts 
+-#   -# .Mainpost
+-#   = form_with model: @post, html: {class: 'Mainpost'}, local: true do |f|
+-#     .Mainpost__box
+-#       = f.file_field :image, class: 'Mainpost__image'
+-#       -# .Mainpost__image
+-#       -# = image_tag post.image.url, class: 'Message__images' if post.image.present?
+-#       -# = image_tag '/assets/test2.jpg', height: '240em', width: '240em', class: 'hoge'
+-#       .Mainpost__right
+-#         -# .Mainpost__inputname
+-#         = f.text_field :areaname, class: 'Mainpost__inputname', placeholder: 'スポット名を入力'
+-#         .Mainpost__inputarea
+-#         = f.text_field :large_area, class: 'Mainpost__inputarea', placeholder: '広場所を入力'
+-#         .Mainpost__inputcoment
+-#         = f.text_field :content, class: 'Mainpost__comment', placeholder: 'コメントを入力'
+-#         .Mainpost__inputspoint
+-#           = f.text_field :check_1, class: 'Mainpost__inputspointe', placeholder: 'こだわりを入力'
+-#     .Footer
+-#       = f.submit '投稿する', class: 'Footer__menu'

@@ -22,10 +22,33 @@
 
     }
     &__image {
-
+      width: 15em;
+      height: 15em;
     }
     &__right {
 
     }
+
+    &__inputname {
+      margin-top: 1.5em;
+    }
+    &__inputarea {
+      margin-top: 1.5em;
+    }
+    &__inputcoment {
+      margin-top: 1.5em;
+    }
+    &__inputspointe {
+      margin-top: 1.5em;
+    }
+  }
+  .Footer {
+    display: flex;
+    justify-content: flex-end;
+    &__menu {
+      margin-right: 3em;
+      padding: 2em;
+    }
+     
   }
 }

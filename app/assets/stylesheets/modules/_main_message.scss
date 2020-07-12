@@ -10,7 +10,9 @@
   .Message {
     &__box {
       background-color: white;
-      width: 39em;
+      margin-top: 2em;
+      // width: 39em;
+      widht: 40vw;
       height: 18em;
       padding: 1em;
       display: inline-block;
@@ -22,9 +24,12 @@
     
     }
     &__image {
+      width: 12em;
+      height: 12em;
   
     }
     &__userbox {
+      margin-top: 3em;
       display: flex;
   
 
@@ -46,9 +51,11 @@
 
     } 
     &__contentsname {
-      font-size: 2.5em;
+      border-top: solid 0.05em gray;
+      padding: 0.5em 0;
     } 
     &__contentsarea {
+      border-top: solid 0.05em gray;
       padding: 0.5em 0;
     }
     &__contentscoment {
