@@ -61,7 +61,11 @@
     &__pagename {
     
     }
+    &__right {
+    
+    }
     &__righttext{
+  
       padding-right: 1em;
       font-size: 30px;
     
@@ -70,6 +74,7 @@
       }
     }
     &__rightimages {
+      
       display: flex;
       justify-content: flex-end;
     }

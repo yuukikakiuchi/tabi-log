@@ -1,54 +1,183 @@
+.Headermenu {
+  background-color: black;
+  height: 3em;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    list-style: none;
+    line-height: 3em;
+    padding-left: 1em;
+  }
+  &__top {
+    padding: 0.1em;
+    a {
+      color: white;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    line-height: 3em;
+  }
+  &__new {
+    padding: 0 1em;
+  }
+  &__login {
+    padding: 0 1em;
+  }
+  &__mypage {
+    padding: 0 1em;
+  }
+
+}
+
 .Posts {
   background-color: white;
   width: 100vw;
   height: 100vh;
   padding: 2em;
 
+  .Headermenu {
+    background-color: black;
+    height: 3em;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+  
+    &__left {
+      list-style: none;
+      line-height: 3em;
+      padding-left: 1em;
+    }
+    &__top {
+      padding: 0.1em;
+    }
+
+    &__right {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      line-height: 3em;
+    }
+    &__new {
+      padding: 0 1em;
+    }
+    &__login {
+      padding: 0 1em;
+    }
+    &__mypage {
+      padding: 0 1em;
+    }
+
+  }
+
+
 
   .Mainpost {
-    display: flex;
-    justify-content: center;
-
+    // width: 100vw;
+    // height: 100vh;
+    // padding: 2em;
+    
+    &__postform {
+      background-color: #ffffff;
+      border: solid 0.05em gray;
+      
+    }
 
     &__box {
-      background-color: white;
-      width: 39em;
-      height: 18em;
+      
+      height: 20em;
       padding: 1em;
-      display: inline-block;
-      border: solid 0.05em gray;
       display: flex;
       justify-content: space-between;
 
+    }
+    &__boxleft {
+  
+      width: 17em;
+      padding: 1em;
     }
     &__image {
       width: 15em;
       height: 15em;
     }
-    &__right {
-
+    &__boxright {
+   
+      width: 20em;
+      padding: 1em;
+      // box-sizing: border-box;
+      // align-items: center;
     }
 
     &__inputname {
-      margin-top: 1.5em;
+  
     }
+    &__genre {
+      margin-top: 0.7em;
+
+    }
+
     &__inputarea {
-      margin-top: 1.5em;
+      margin-top: 0.7em;
     }
+    &__inputmediumarea {
+      margin-top: 0.7em;
+    }
+
     &__inputcoment {
-      margin-top: 1.5em;
+      margin-top: 0.7em;
+  
     }
-    &__inputspointe {
-      margin-top: 1.5em;
-    }
-  }
-  .Footer {
-    display: flex;
-    justify-content: flex-end;
-    &__menu {
-      margin-right: 3em;
-      padding: 2em;
-    }
+    .Checkgroup {
+      display: flex;
+      justify-content: space-around;
+      height: 7em;
+      padding: 0.3em;
+
+      .Checkbox {
+ 
+   
+      }
+        &__check {
+          // padding: 0.5em;
+          // display: flex;
+   
+        }
+          ul {
+          
+            // padding: 0.5em;
+          }
+          li {
+            padding: 0.3em 0.3em 0.3em 0.3em;
+            margin-right: 1em;
+            list-style: none;
+          }
+        // &__check {
+        //   display: flex;
      
+        // }
+        //   ul {
+        //     display: flex;
+      
+        //   }
+        //   li {
+        //     padding: 0.3em 1em 0.3em 0.3em;
+        //     list-style: none;
+          // }
+      
+    }
+    .Footer {
+      display: flex;
+      justify-content: flex-end;
+      &__menu {
+        margin-top: 1em;
+        padding: 0.5em;
+        
+      }
+    }
   }
 }

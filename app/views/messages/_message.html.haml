@@ -13,40 +13,80 @@
     .Message__boxright
       .Message__contents
         .Message__contentsname
-          場所名: 
+          スポット名: 
           = post.areaname
         .Message__contentsarea
           エリア: 
-          = post.large_area
+          = post.medium_area
+
         .Message__contentscoment
           コメント: 
-          = post.content
+          = safe_join(post.content.split("\n"), tag(:br))
+          -# = post.content
         .Message__contentsspoint
-          こだわり: 
-          = post.check_1
+          %ul 
+            [こだわりポイント]
+            %li
+              = post.check_1
+            %li
+              = post.check_2
+            %li
+              = post.check_3
+            %li
+              = post.check_4
+            %li
+              = post.check_5
+            %li
+              = post.check_6
+            %li
+              = post.check_7
+            %li
+              = post.check_8
+            %li
+              = post.check_9
+-# - @posts.each do |post|
+-#   .Message__box
+-#     .Message__boxleft
+-#       .Message__image
+-#         = image_tag post.image.url
+-#       .Message__userbox
+-#         .Message__user
+-#           投稿者：
+-#         .Message__username
+-#           uni
+-#         .Message__nice
+-#           イイね❤︎2
+-#     .Message__boxright
+-#       .Message__contents
+-#         .Message__contentsname
+-#           スポット名: 
+-#           = post.areaname
+-#         .Message__contentsarea
+-#           エリア: 
+-#           = post.medium_area
 
-
-  -# .Message__box
-  -# .Message__boxleft
-  -#   .Message__image
-  -#     -# = image_tag @post.image_url, class: 'Message__imagea' if @post.image.present?
-  -#   .Message__userbox
-  -#     .Message__user
-  -#       投稿者：
-  -#     .Message__username
-  -#       uni
-  -#     .Message__nice
-  -#       イイね❤︎2
-  -# .Message__boxright
-  -#   .Message__contents
-  -#     - @posts.each do |post|
-  -#       .Message__contentsname
-  -#         場所名: 
-  -#         = post.areaname
-  -#       .Message__contentsarea
-  -#         エリア: 
-  -#         = post.large_area
-      
-  -#     .Message__contentscoment
-
-  -#     .Message__contentsspoint
+-#         .Message__contentscoment
+-#           コメント: 
+-#           = safe_join(post.content.split("\n"), tag(:br))
+-#           -# = post.content
+-#         .Message__contentsspoint
+-#           %ul 
+-#             [こだわりポイント]
+-#             %li
+-#               = post.check_1
+-#             %li
+-#               = post.check_2
+-#             %li
+-#               = post.check_3
+-#             %li
+-#               = post.check_4
+-#             %li
+-#               = post.check_5
+-#             %li
+-#               = post.check_6
+-#             %li
+-#               = post.check_7
+-#             %li
+-#               = post.check_8
+-#             %li
+-#               = post.check_9

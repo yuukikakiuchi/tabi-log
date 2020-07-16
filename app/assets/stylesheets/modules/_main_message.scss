@@ -10,10 +10,10 @@
   .Message {
     &__box {
       background-color: white;
-      margin-top: 2em;
+      margin-top: 0.5em;
       // width: 39em;
-      widht: 40vw;
-      height: 18em;
+      width: 40em;
+      height: 20em;
       padding: 1em;
       display: inline-block;
       border: solid 0.05em gray;
@@ -21,7 +21,9 @@
       justify-content: space-between;
     }
     &__boxleft {
-    
+ 
+      width: 20em;
+      height: 16em;
     }
     &__image {
       width: 12em;
@@ -29,7 +31,8 @@
   
     }
     &__userbox {
-      margin-top: 3em;
+      margin: 2em 0;
+      padding: 0.3em 0.2em 0.3em 0;
       display: flex;
   
 
@@ -41,11 +44,12 @@
 
     }
     &__nice {
-      margin-left: 2.5em;
+      margin-left: 2em;
 
     } 
     &__boxright {
-      padding-right: 2em;
+      padding: 0 2em;
+      width: 60vw;
     }
     &__contents {
 

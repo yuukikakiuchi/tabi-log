@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :messages, only: :index
   resources :posts, only: [:index, :new, :create]
   resources :users, only: :index
+  resources :regions, only: :index
   
 end

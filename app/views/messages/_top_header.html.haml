@@ -1,19 +1,5 @@
 .Header
-  .Headermenu
-    %ul.Headermenu__left
-      %li.Headermenu__top
-        ←旅ログ
-    %ul.Headermenu__right
-      %li.Headermenu__new
-        新規登録
-      %li.Headermenu__itembar
-        |
-      %li.Headermenu__login
-        ログイン
-      %li.Headermenu__itembar
-        |
-      %li.Headermenu__mypage
-        マイページ
+  = render @headers
   .Headermain
     -# .Headermain__images
     .Headermain__pagename

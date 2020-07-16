@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
+    @regions = Region.all
+    @prefectures = Prefecture.all
+    @headers = 'messages/header'
   end
 
   def new
@@ -10,18 +13,26 @@ class PostsController < ApplicationController
 
 
   def create
-    def create
-      Post.create(post_params)
-
-    end
-    
+    Post.create(post_params)
+    Category.create(category_params)
+    # Post_category_relation.create(post_category_params)
+    # category様にpermit指定したこのテーブルのカラムだけでよし多対多の関連付けのおかげかも
   end
 
  
   private
   def post_params
-    params.permit(:areaname, :content, :large_area, :check_1, :image)
+    params.permit(:areaname, :content, :genre, :large_area, :medium_area, :check_1, :check_2, :check_3, :check_4, :check_5, :check_6, :check_7, :check_8, :check_9, :image)
   end
+  
+  def category_params
+    params.permit(:check_1, :check_id, :post_id, :category_id)
+  end
+
+  # def post_category_params
+  #   params.permit(:category_id, :post_id)
+  # end
+
 end
 
 

@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     # postsコントローラーの変数、これが無いとpostで送った内容が表示できない
     @messages = 'message'
     # massageビューでこの変数を使う、messageURLが入っている
+    @headers = 'header'
   end
 
   # private
