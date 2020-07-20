@@ -1,16 +1,98 @@
 .Sidebar
   .Sidebarmain
+    .Map
+    %h2 GoogleMap検索
+    %input#address{:type => "textbox", :value => ""}/
+    %input{:onclick => "codeAddress()", :type => "button", :value => "Search"}/
+
+    #map
+    :css
+      #map {
+        height: 250px;
+        width: 250px;
+      }
+    :javascript
+      let map
+
+      function initMap(){
+        geocoder = new google.maps.Geocoder()
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 34.6873, lng:135.5259},
+          zoom: 8,
+        });
+
+        marker = new google.maps.Marker({
+          position:  {lat: 43.7828, lng:-73.9653},
+          map: map
+        });
+      }
+      let geocoder
+
+      function codeAddress(){
+        let inputAddress = document.getElementById('address').value;
+
+        geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+          if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+          } else {
+            alert('該当する結果がありませんでした：' + status);
+          }
+        });   
+      }
+
+
+
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDFVB5jgBHoEaTVm7DaX-64NE8-wvXtGWU&callback=initMap"}
+
     .Sidebarmain__areabox
       %h1 エリアから選ぶ
     .Sidebarmain__drop
-      Dropdown
+      .Mainpost__genre
+        関西
+        -# = f.select, [["アウトドア", "アウトドア"], ["屋内", "屋内"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "ジャンルを選んで下さい"}, {class: ''}
     .Sidebarmain__list
-      大阪
-      兵庫
-      奈良
+      %ul
+        %li
+          = link_to '大阪', 'post', action: 'index', check_1: '初心者にオススメ'
+        %li
+          = link_to '京都', 'post', action: 'index', check_1: '初心者にオススメ'
+        %li
+          = link_to '奈良', 'post', action: 'index', check_1: '初心者にオススメ'
+      %ul
+        %li
+          = link_to '三重', 'post', action: 'index', check_1: '初心者にオススメ'
+        %li
+          = link_to '兵庫', 'post', action: 'index', check_1: '初心者にオスス'
+        %li  
+          = link_to '滋賀', 'post', action: 'index', check_1: '初心者にオススメ'
+      %ul
+        %li
+          = link_to '和歌山', 'post', action: 'index', check_1: '初心者にオススメ'
 
     .Sidebarmain__ldentify
       %h1 こだわりポイントで探す
       .Sidebarmain__ldentifylist
-        = link_to '初心者にオススメ', 'post', action: 'index', check_1: '初心者にオススメ'
-
+        %ul
+          %li
+            = link_to '初心者にオススメ', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to '中級者以上にオススメ', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to '上級者向け', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to '携帯電波有り', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to 'お一人様多数', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to '人通り[少]', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to 'カウンター席有り', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to '近くに薬局', 'post', action: 'index', check_1: '初心者にオススメ'
+          %li
+            = link_to 'アウェー感[少]', 'post', action: 'index', check_1: '初心者にオススメ'

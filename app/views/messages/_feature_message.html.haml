@@ -1,0 +1,12 @@
+- @fposts.each do |post|
+  .Message__box-f
+    -# = link_to message_path, index, areanames: @post.areaname
+    .Message__boxleft-f
+      -# = link_to '初心者オススメ', 'message_path', action: 'index', check_1: '初心者にオススメ'
+      .Message__image-f
+        = image_tag post.image.url, size: "100x100"
+      .Message__contents-f
+        .Message__contentsname-f
+          = post.areaname
+        .Message__contentsarea-f
+          = post.medium_area

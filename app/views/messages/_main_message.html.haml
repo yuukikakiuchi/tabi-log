@@ -1,8 +1,14 @@
 .Main
   .Message
     -# = render partial: 'message', locals: {message: post.content}
-
-    = render @messages
+    .Message__group
+      .Messagegroup__left
+        = render @messages
+      .Messagegroup__right
+        .Messagegroup__righttext
+          %span ●特集
+          [初心者にオススメ]
+        = render @fmessages
     -# .Message__box
     -#   .Message__boxleft
     -#     .Message__image
