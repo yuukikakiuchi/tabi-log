@@ -1,0 +1,111 @@
+-# - @posts.each do |post|
+- @posts.each do |post|
+  .Message__box
+    .Message__boxleft
+      .Message__image
+        = image_tag post.image.url
+      .Message__userbox
+        .Message__user
+          投稿者：
+        .Message__username
+          test
+        .Message__nice
+          イイね❤︎2
+    .Message__boxright
+      .Message__contents
+        .Message__contentsname
+          スポット名: 
+          = post.areaname
+        .Message__contentsgenre
+          ジャンル: 
+          = post.genre
+        .Message__contentsarea
+          エリア:
+          = post.medium_area
+        .Message__contentslevel
+          ソロ活難易度:
+          = post.level
+        .Message__contentscoment
+          コメント: 
+          = safe_join(post.content.split("\n"), tag(:br))
+          -# = post.content
+        .Message__contentsspoint
+          %ul 
+            [こだわりポイント]
+            %li
+              = post.check_1
+            %li
+              = post.check_2
+            %li
+              = post.check_3
+            %li
+              = post.check_4
+            %li
+              = post.check_5
+            %li
+              = post.check_6
+            %li
+              = post.check_7
+            %li
+              = post.check_8
+            %li
+              = post.check_9
+  -# .Sarch
+  -#   %ul 
+  -#     - @messages.each do |post|
+  -#       %li
+  -#         = link_to post.areaname, post
+          
+  -#         = post.created_at
+  -#         = post.status
+      -# %li
+      -# = link_to "編集",edit_post_path(post)
+      -# = link_to "削除",post, method: :delete
+
+
+-# - @posts.each do |post|
+-#   .Message__box
+-#     .Message__boxleft
+-#       .Message__image
+-#         = image_tag post.image.url
+-#       .Message__userbox
+-#         .Message__user
+-#           投稿者：
+-#         .Message__username
+-#           uni
+-#         .Message__nice
+-#           イイね❤︎2
+-#     .Message__boxright
+-#       .Message__contents
+-#         .Message__contentsname
+-#           スポット名: 
+-#           = post.areaname
+-#         .Message__contentsarea
+-#           エリア: 
+-#           = post.medium_area
+
+-#         .Message__contentscoment
+-#           コメント: 
+-#           = safe_join(post.content.split("\n"), tag(:br))
+-#           -# = post.content
+-#         .Message__contentsspoint
+-#           %ul 
+-#             [こだわりポイント]
+-#             %li
+-#               = post.check_1
+-#             %li
+-#               = post.check_2
+-#             %li
+-#               = post.check_3
+-#             %li
+-#               = post.check_4
+-#             %li
+-#               = post.check_5
+-#             %li
+-#               = post.check_6
+-#             %li
+-#               = post.check_7
+-#             %li
+-#               = post.check_8
+-#             %li
+-#               = post.check_9

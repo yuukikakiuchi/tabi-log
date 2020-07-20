@@ -1,24 +1,28 @@
 .Header
-  .Headermenu
-    %ul.Headermenu__right
-      %li.Headermenu__new
-        新規登録
-      %li.Headermenu__itembar
-        |
-      %li.Headermenu__login
-        ログイン
-      %li.Headermenu__itembar
-        |
-      %li.Headermenu__mypage
-        マイページ
+  = render @headers
   .Headermain
+    -# .Headermain__images
     .Headermain__pagename
       = image_tag '/assets/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
-
+    .Headermain__right
+      .Headermain__righttext
+        %p ひとり旅が好き？
+        %span 私はひとり旅も好き
+      .Headermain__rightimages
+        .Headermain__rightimage
+          = image_tag '/assets/logo2.jpg', height: '100em', width: '100em', class: 'hoge'
   .Headerlist
     .Headerlist__group 
-      .Headerlist__search
-        キーワード検索
+      .Headerlist__searchbox
+        .Headerlist__text
+          キーワード検索：
+        .Headerlist__search
+          = form_tag messages_path, :method => 'get' do
+            = text_field_tag :search
+            -# 検索を押したリンク先（2つ上）
+            -# コントローラーで定義するパラメーター名に値を送る、モデルにいく
+            = submit_tag '検索', :name => nil
+            -# URLの後ろに余計な検索がつく、いらないのでnil
       .Headerlist__right
         .Headerlist__post
-          投稿する
+          = link_to "投稿する", posts_path, class: 'Button'

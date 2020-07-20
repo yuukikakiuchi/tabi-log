@@ -1,7 +1,8 @@
 .Sidebar {
-  // background-color: grey;
-  width: 15em;
+  background-color: #fffafa;
+  width: 17em;
   height: 100vh;
+  // overflow: scroll;
 }
   .Sidebarmain {
     padding: 1em;
@@ -32,10 +33,19 @@
 
     &__list {
       border: solid 0.05em gray;
-      background-color: white;
-      width: 13em;
-      height: 6em;
+      // background-color: white;
+      padding: 0.3em;
+      width: 15em;
+      height: ８em;
       margin-top: 1em;
+      list-style: none;
+      ul {
+        display: flex;
+        justify-content: flex-start;
+      }
+      li {
+        padding: 0 1em 0 1em;
+      }
     }
 
     &__ldentify {
@@ -44,7 +54,7 @@
     &__ldentifylist {
       border: solid 0.05em gray;
       background-color: white;
-      width: 13em;
-      height: 6em;
+      width: 15em;
+      height: 18em;
     }
   }

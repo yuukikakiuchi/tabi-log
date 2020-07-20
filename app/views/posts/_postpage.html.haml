@@ -1,0 +1,94 @@
+= render @headers
+.Posts
+  -# = render @headers
+  = form_with model: @post, html: {class: 'Mainpost'}, local: true do |f|
+    .Mainpost__postform
+      .Mainpost__box
+        .Mainpost__boxleft
+          = f.label :image, class: 'image_label' do
+            -# .prev-contents
+            -#   -# 既に登録されている画像があれば表示をさせます
+            -#   - if image.present?
+            -#     .prev-content
+            -#       = image_tag image.url, alt: "preview", class: "prev-image"
+            -#   -# 既に登録されている画像がなければiconを表示させます
+            -#   - else
+            -#     = icon('fas', 'image', class: 'photo-icon')
+            -# -# file_fieldはdisplay: none;で隠します
+            = f.file_field :image, class: 'Mainpost＿＿image'
+
+
+
+
+
+          -# = f.file_field :image, class: 'Mainpost__image'
+        .Mainpost__boxright
+          .Mainpost__inputname
+            = f.text_field :areaname, placeholder: 'スポット名を入力して下さい', class: 'formbox'
+          .Mainpost__genre
+            = f.select :genre, [["アウトドア", "アウトドア"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "ジャンルを選んで下さい"}, {class: 'formbox'}
+          .Mainpost__inputarea
+            = f.collection_select :large_area, @regions, :name, :name, { prompt: "地方を選んで下さい" }, class: 'formbox'
+          .Mainpost__inputmediumarea
+            = f.collection_select :medium_area, @prefectures, :name, :name,  { prompt: "都道府県を選んで下さい" }, class: 'formbox'
+          .Mainpost__inputcoment
+            = f.text_area :content, class: 'Mainpost__comment', placeholder: 'コメントを入力して下さい'
+          .Mainpost__level
+            = f.select :level, [["★", "★"], ["★★", "★★"], ["★★★", "★★★"], ["★★★★", "★★★★"], ["★★★★★", "★★★★★"]], {include_blank: "ソロ活難易度を教えて下さい"}, {class: 'formbox'}
+
+      .Checkgroup
+        .Checkbox
+          %ul.Checkbox__check
+          -# = collection_check_boxes :post, Post.all, :check_box
+          %li
+            = check_box_tag :check_1, value = "初心者にオススメ"
+            = label_tag :check1_, "初心者にオススメ"
+          %li
+            = check_box_tag :check_2, value = "中級者以上にオススメ"
+            = label_tag :check_2, "中級者以上にオススメ"
+          %li
+            = check_box_tag :check_3, value = "上級者向け"
+            = label_tag :check_3, "上級者向け"
+        .Checkbox
+          %ul.Checkbox__check
+          %li
+            = check_box_tag :check_4, value = "携帯電波有り"
+            = label_tag :check_4, "携帯電波有り"
+          %li
+            = check_box_tag :check_5, value = "お一人様多数"
+            = label_tag :check_5, "お一人様多数"
+          %li
+            = check_box_tag :check_6, value = "人通り[少]"
+            = label_tag :check_6, "人通り[少]"
+
+        .Checkbox
+          %ul.Checkbox__check
+          %li
+            = check_box_tag :check_7, value = "カウンター席有り"
+            = label_tag :check_7, "カウンター席有り"
+          %li
+            = check_box_tag :check_8, value = "近くに薬局"
+            = label_tag :check_8, "近くに薬局"
+          %li
+            = check_box_tag :check_9, value = "アウェー感[小]"
+            = label_tag :check_9, "アウェー感[小]"
+
+    .Footer
+      = f.submit '投稿する', class: 'Footer__menu'
+    -# .Category
+    -#   = @category.check
+
+-# .Posts
+-#   = form_with model: @post, html: {class: 'Mainpost'}, local: true do |f|
+-#     .Mainpost__box
+-#       = f.file_field :image, class: 'Mainpost__image'
+-#       .Mainpost__right
+-#         = f.text_field :areaname, class: 'Mainpost__inputname', placeholder: 'スポット名を入力'
+-#         .Mainpost__inputarea
+-#         = f.text_field :large_area, class: 'Mainpost__inputarea', placeholder: '広場所を入力'
+-#         .Mainpost__inputcoment
+-#         = f.text_field :content, class: 'Mainpost__comment', placeholder: 'コメントを入力'
+-#         .Mainpost__inputspoint
+-#           = f.text_field :check_1, class: 'Mainpost__inputspointe', placeholder: 'こだわりを入力'
+-#     .Footer
+-#       = f.submit '投稿する', class: 'Footer__menu'

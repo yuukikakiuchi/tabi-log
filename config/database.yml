@@ -20,6 +20,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: yuukikakiuchi
+  password: saifisu64
+  host: localhost
+  timeout: 5000
 
 development:
   <<: *default
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: tabi_log_production
-  username: tabi_log
+  username: yuukikakiuchi
   password: <%= ENV['TABI_LOG_DATABASE_PASSWORD'] %>
