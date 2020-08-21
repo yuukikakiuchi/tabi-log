@@ -266,7 +266,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mini_magick
-  pg
+  pg (>= 0.18, < 2.0)
   pry-doc
   pry-rails
   puma (~> 4.1)
