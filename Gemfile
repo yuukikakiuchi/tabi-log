@@ -62,6 +62,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'pry-doc'
+gem 'jquery-rails'
 
 group :production do
 
