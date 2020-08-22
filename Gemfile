@@ -65,6 +65,6 @@ gem 'pry-doc'
 
 group :production do
 
-  gem 'pg'
+  gem 'pg', '>= 0.18', '< 2.0'
 
 end
