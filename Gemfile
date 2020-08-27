@@ -50,6 +50,14 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  
+  gem 'pry-rails'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rails-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -65,8 +73,6 @@ gem 'pry-doc'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 
-# group :production do
-
-#   gem 'pg', '>= 0.18', '< 2.0'
-
-# end
+group :production do
+  gem 'unicorn'
+end

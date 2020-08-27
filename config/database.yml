@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -84,9 +84,15 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: tabi-log_production  #アプリケーション名はご自身のものに変更してください
+  username: yuukikakiuchi            #rootに変更
+  password: saifisu64
+  # socket: /var/lib/mysql/mysql.sock
+
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: 5
+
   # database: tabi_log_production
   # username: yuukikakiuchi
   # password: <%= ENV['TABI_LOG_DATABASE_PASSWORD'] %>

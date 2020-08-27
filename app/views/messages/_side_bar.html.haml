@@ -1,53 +1,53 @@
 .Sidebar
   .Sidebarmain
-    -# .Map
-    -# %h2 GoogleMap検索
-    -# %input#address{:type => "textbox", :value => ""}/
-    -# %input{:onclick => "codeAddress()", :type => "button", :value => "Search"}/
+    .Map
+    %h2 GoogleMap検索
+    %input#address{:type => "textbox", :value => ""}/
+    %input{:onclick => "codeAddress()", :type => "button", :value => "Search"}/
 
-    -# #map
-    -# :css
-    -#   #map {
-    -#     height: 250px;
-    -#     width: 250px;
-    -#   }
-    -# :javascript
-    -#   let map
+    #map
+    :css
+      #map {
+        height: 250px;
+        width: 250px;
+      }
+    :javascript
+      let map
 
-    -#   function initMap(){
-    -#     geocoder = new google.maps.Geocoder()
+      function initMap(){
+        geocoder = new google.maps.Geocoder()
 
-    -#     map = new google.maps.Map(document.getElementById('map'), {
-    -#       center: {lat: 34.6873, lng:135.5259},
-    -#       zoom: 8,
-    -#     });
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 34.6873, lng:135.5259},
+          zoom: 8,
+        });
 
-    -#     marker = new google.maps.Marker({
-    -#       position:  {lat: 43.7828, lng:-73.9653},
-    -#       map: map
-    -#     });
-    -#   }
-    -#   let geocoder
+        marker = new google.maps.Marker({
+          position:  {lat: 43.7828, lng:-73.9653},
+          map: map
+        });
+      }
+      let geocoder
 
-    -#   function codeAddress(){
-    -#     let inputAddress = document.getElementById('address').value;
+      function codeAddress(){
+        let inputAddress = document.getElementById('address').value;
 
-    -#     geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    -#       if (status == 'OK') {
-    -#         map.setCenter(results[0].geometry.location);
-    -#         var marker = new google.maps.Marker({
-    -#             map: map,
-    -#             position: results[0].geometry.location
-    -#         });
-    -#       } else {
-    -#         alert('該当する結果がありませんでした：' + status);
-    -#       }
-    -#     });   
-    -#   }
+        geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+          if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+          } else {
+            alert('該当する結果がありませんでした：' + status);
+          }
+        });   
+      }
 
 
 
-    -# %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDFVB5jgBHoEaTVm7DaX-64NE8-wvXtGWU&callback=initMap"}
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDFVB5jgBHoEaTVm7DaX-64NE8-wvXtGWU&callback=initMap"}
 
     .Sidebarmain__areabox
       %h1 エリアから選ぶ
