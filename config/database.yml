@@ -15,15 +15,17 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
+  database: blog_development
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: yuukikakiuchi
-  password: saifisu64
+  username: root
+  password: 
   host: localhost
   timeout: 5000
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -85,9 +87,9 @@ test:
 production:
   <<: *default
   database: tabi-log_production  #アプリケーション名はご自身のものに変更してください
-  username: yuukikakiuchi            #rootに変更
-  password: saifisu64
-  # socket: /var/lib/mysql/mysql.sock
+  username: root            #rootに変更
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
 
   # adapter: postgresql
   # encoding: unicode
