@@ -72,6 +72,7 @@ gem 'pry-rails'
 gem 'pry-doc'
 gem 'jquery-rails'
 gem 'dotenv-rails'
+gem 'mysql2'
 
 group :production do
   gem 'unicorn'
