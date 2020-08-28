@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'items/index'
   root "messages#index"
   resources :messages, only: :index do
     collection do
