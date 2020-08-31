@@ -71,7 +71,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'pry-doc'
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'mysql2'
 
