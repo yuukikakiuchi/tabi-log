@@ -6,6 +6,8 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
+# Use mysql as the database for Active Record
+gem 'mysql2', '0.5.3'
 # gem 'pg', '>= 0.18', '< 2.0'
 # gem 'pg'
 # Use Puma as the app server
@@ -73,7 +75,7 @@ gem 'pry-rails'
 gem 'pry-doc'
 gem 'jquery-rails'
 gem 'dotenv-rails'
-gem 'mysql2'
+# gem 'mysql2'
 
 group :production do
   gem 'unicorn'
