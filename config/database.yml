@@ -22,7 +22,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: saifisu64
+  password:
   # host: localhost
   # timeout: 5000
   socket: /tmp/mysql.sock
