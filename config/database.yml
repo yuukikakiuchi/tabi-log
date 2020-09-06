@@ -89,7 +89,7 @@ production:
   database: tabi-log_production  #アプリケーション名はご自身のものに変更してください
   username: root            #rootに変更
   password:
-  # socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
 
   # adapter: postgresql
   # encoding: unicode
