@@ -22,7 +22,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: Password.98
+  password:
   # host: localhost
   # timeout: 5000
   socket: /tmp/mysql.sock
@@ -88,7 +88,7 @@ production:
   <<: *default
   database: tabi-log_production  #アプリケーション名はご自身のものに変更してください
   username: root            #rootに変更
-  password:
+  password: Password.98
   socket: /var/lib/mysql/mysql.sock
 
   # adapter: postgresql
