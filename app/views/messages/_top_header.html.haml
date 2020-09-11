@@ -3,8 +3,8 @@
   .Headermain
     -# .Headermain__images
     .Headermain__pagename
-      = image_tag '/assets_path/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
-      -# = image_tag assets_path/'logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+      -# = image_tag '/assets/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+      = image_tag asset_path('logo1.PNG'), height: '200em', width: '200em', class: 'hoge'
 
     .Headermain__right
       .Headermain__righttext
@@ -12,7 +12,8 @@
         %span 私はひとり旅も好き
       .Headermain__rightimages
         .Headermain__rightimage
-          = image_tag '/assets/logo2.jpg', height: '100em', width: '100em', class: 'hoge'
+          = image_tag asset_path('logo2.jpg'), height: '100em', width: '100em', class: 'hoge'
+          -# = image_tag '/assets/logo2.jpg', height: '100em', width: '100em', class: 'hoge'
   .Headerlist
     .Headerlist__group 
       .Headerlist__searchbox
