@@ -3,7 +3,9 @@
   .Headermain
     -# .Headermain__images
     .Headermain__pagename
-      = image_tag '/assets/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+      = image_tag '/assets_path/logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+      -# = image_tag assets_path/'logo1.PNG', height: '200em', width: '200em', class: 'hoge'
+
     .Headermain__right
       .Headermain__righttext
         %p ひとり旅が好き？
