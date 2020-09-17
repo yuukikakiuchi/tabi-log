@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
-    Category.create(category_params)
+    # Category.create(category_params)
     # Post_category_relation.create(post_category_params)
     # category様にpermit指定したこのテーブルのカラムだけでよし多対多の関連付けのおかげかも
   end

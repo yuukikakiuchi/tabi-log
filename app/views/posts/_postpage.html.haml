@@ -28,9 +28,11 @@
           .Mainpost__genre
             = f.select :genre, [["アウトドア", "アウトドア"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "ジャンルを選んで下さい"}, {class: 'formbox'}
           .Mainpost__inputarea
-            = f.collection_select :large_area, @regions, :name, :name, { prompt: "地方を選んで下さい" }, class: 'formbox'
+            = f.select :large_area, [["北海道", "北海道"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "地方を選んで下さい"}, {class: 'formbox'}
+            -# = f.collection_select :large_area, @regions, :name, :name, { prompt: "地方を選んで下さい" }, class: 'formbox'
           .Mainpost__inputmediumarea
-            = f.collection_select :medium_area, @prefectures, :name, :name,  { prompt: "都道府県を選んで下さい" }, class: 'formbox'
+            = f.select :medium_area, [["北海", "北海"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "地方を選んで下さい"}, {class: 'formbox'}
+            -# = f.collection_select :medium_area, @prefectures, :name, :name,  { prompt: "都道府県を選んで下さい" }, class: 'formbox'
           .Mainpost__inputcoment
             = f.text_area :content, class: 'Mainpost__comment', placeholder: 'コメントを入力して下さい'
           .Mainpost__level
