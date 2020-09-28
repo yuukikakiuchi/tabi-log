@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  belongs_to :category
+
+  
   validates :content,presence: true
   mount_uploader :image, ImageUploader
 

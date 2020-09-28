@@ -1,7 +1,9 @@
 = render @headers
 .Posts
   -# = render @headers
-  = form_with model: @post, html: {class: 'Mainpost'}, local: true do |f|
+  -# = form_with model:@post, html: {class: 'Mainpost'}, local: true do |f|
+  = form_with model:@post, class: 'Mainpost', local: true do |f|
+
     .Mainpost__postform
       .Mainpost__box
         .Mainpost__boxleft
@@ -28,8 +30,9 @@
           .Mainpost__genre
             = f.select :genre, [["アウトドア", "アウトドア"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "ジャンルを選んで下さい"}, {class: 'formbox'}
           .Mainpost__inputarea
-            = f.select :large_area, [["北海道", "北海道"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "地方を選んで下さい"}, {class: 'formbox'}
-            -# = f.collection_select :large_area, @regions, :name, :name, { prompt: "地方を選んで下さい" }, class: 'formbox'
+            -# = f.select :large_area, [["北海道", "北海道"], ["東北", "東北"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "地方を選んで下さい"}, {class: 'formbox'}
+            = f.collection_select :category_id, @category_parent_array, :id, :name, {include_blank: "地方を選んで下さい"}, class: "formbox"
+            -# = f.collection_select :large_area, @category_parent_array, :name, :name, {include_blank: "地を選んで下さい"}, class: "formbox"
           .Mainpost__inputmediumarea
             = f.select :medium_area, [["北海", "北海"], ["屋内", "屋内"], ["アミューズメント", "アミューズメント"],["遺跡", "遺跡"],["城", "城"], ["飲食", "飲食"], ["お酒", "お酒"]], {include_blank: "地方を選んで下さい"}, {class: 'formbox'}
             -# = f.collection_select :medium_area, @prefectures, :name, :name,  { prompt: "都道府県を選んで下さい" }, class: 'formbox'
@@ -43,14 +46,20 @@
           %ul.Checkbox__check
           -# = collection_check_boxes :post, Post.all, :check_box
           %li
-            = check_box_tag :check_1, value = "初心者にオススメ"
-            = label_tag :check1_, "初心者にオススメ"
+            = f.check_box :check_1, {}, "初心者にオススメ", nil
+            = label_tag :check_1, "初心者にオススメ"
           %li
-            = check_box_tag :check_2, value = "中級者以上にオススメ"
+            = f.check_box :check_2, {}, "中級者以上にオススメ", nil
             = label_tag :check_2, "中級者以上にオススメ"
           %li
-            = check_box_tag :check_3, value = "上級者向け"
+            = f.check_box :check_3, {}, "上級者向け", nil
             = label_tag :check_3, "上級者向け"
+          -# %li
+          -#   = check_box :check_2, value = "中級者以上にオススメ"
+          -#   = label_tag :check_2, "中級者以上にオススメ"
+          -# %li
+          -#   = check_box :check_3, value = "上級者向け"
+          -#   = label_tag :check_3, "上級者向け"
         .Checkbox
           %ul.Checkbox__check
           %li
