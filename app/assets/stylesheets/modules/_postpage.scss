@@ -114,6 +114,7 @@
    
       width: 20em;
       padding: 1em;
+
       // box-sizing: border-box;
       // align-items: center;
     }
@@ -128,7 +129,11 @@
     // }
 
     &__inputname {
+      input[type="text"] {
+        width: 15em;
+      }
     }
+
 
     &__genre {
       margin-top: 0.7em;

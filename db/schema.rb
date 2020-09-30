@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_07_10_022734) do
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.string "image", null: false
@@ -29,6 +34,9 @@ ActiveRecord::Schema.define(version: 2020_07_10_022734) do
     t.string "check_7", default: "", null: false
     t.string "check_8", default: "", null: false
     t.string "check_9", default: "", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
+  add_foreign_key "posts", "categories"
 end

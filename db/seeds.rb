@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.create(name: '北海道')
+Category.create(name: '東北')
+Category.create(name: '関東')
+Category.create(name: '中部')
+Category.create(name: '近畿')
+Category.create(name: '中国')
+Category.create(name: '四国')
+Category.create(name: '九州')
+Category.create(name: '北海道', ancestry: '1')
+Category.create(name: '青森', ancestry: '2')
+Category.create(name: '茨城', ancestry: '3')
+Category.create(name: '新潟', ancestry: '4')
+Category.create(name: '三重', ancestry: '5')
+Category.create(name: '鳥取', ancestry: '6')
+Category.create(name: '徳島', ancestry: '7')
+Category.create(name: '福岡', ancestry: '8')

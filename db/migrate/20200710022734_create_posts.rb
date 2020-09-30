@@ -17,6 +17,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :check_7, null:false, default: ""
       t.string :check_8, null:false, default: ""
       t.string :check_9, null:false, default: ""
+      t.references :category, foreign_key: true, null: false
     
     end
   end
