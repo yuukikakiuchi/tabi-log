@@ -7,12 +7,15 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :posts, only: [:index, :new, :create]
+  resources :posts, only: [:index, :new, :create, :get] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+    end
+  end
   resources :users, only: :index
   resources :regions, only: :index
-  
+
   get 'maps/index'
   # root to: 'maps#index'
   resources :maps, only: [:index]
-
 end

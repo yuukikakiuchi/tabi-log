@@ -1,3 +1,7 @@
-.wrapper
-  -# = render 'posts/postpage'
-  = render 'posts/postpage'
+%html
+  %head  
+    = javascript_include_tag 'categories'
+
+    .wrapper
+      -# = render 'posts/postpage'
+      = render 'posts/postpage'

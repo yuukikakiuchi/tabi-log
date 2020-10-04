@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     @post = Post.new
   
 
+
     # @prefectures = Prefecture.all
     @headers = 'messages/header'
   end
@@ -31,7 +32,13 @@ class PostsController < ApplicationController
     # category様にpermit指定したこのテーブルのカラムだけでよし多対多の関連付けのおかげかも
   end
 
-  
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  def get_category_children_edit
+    @category_children_edit = Category.find(params[:category_id]).children
+  end
 
   # def search
   #   #Viewのformで取得したパラメータをモデルに渡す
